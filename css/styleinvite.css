@@ -1,0 +1,151 @@
+/* General Reset and Body Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f8f8; /* Light background for the overall page */
+    font-family: 'Poppins', sans-serif; /* Default clean font */
+    color: #333;
+}
+
+/* Invitation Card Container */
+.invitation-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 90%;
+    max-width: 380px; /* Max width to resemble a phone screen/card */
+    position: relative;
+    box-sizing: border-box;
+}
+a {
+  color: #646464;
+  outline: none;
+  text-decoration: none;
+}
+/* Primary Pink Color Variable for consistency */
+:root {
+    --primary-pink: linear-gradient(to top,#F3AFB0,#8F977F);
+    --soft-gray: #777;
+    --pink:#ec7bbd;
+}
+
+.linear-gradient-box {
+  /* It is good practice to include a solid background-color as a fallback */
+  background-color: #ff9966; 
+  
+  /* Syntax: linear-gradient(direction/angle, color1, color2, ...) */
+  
+}
+/* Top Indicator Dot */
+.indicator-dot {
+    width: 8px;
+    height: 8px;
+    background-image: var(--primary-pink);
+    border-radius: 50%;
+    margin: 0 auto 30px;
+}
+
+/* Date and Time Styling */
+.date-section, .time-section {
+    margin: 15px 0;
+}
+
+.date-section i, .time-section i {
+    color: var(--soft-gray);
+    font-size: 20px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.date-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--soft-gray);
+    margin: 0;
+}
+
+.time-text {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    color: #444;
+}
+
+/* Names Styling */
+.names-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 20px;
+    position: relative;
+}
+
+.name-fulan, .name-fulana {
+    font-family: 'Playfair Display', serif; /* Script-like or elegant font */
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+    color: #333;
+}
+
+.ampersand {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--pink);
+    padding: 0 10px;
+    position: relative;
+    top: -5px; /* Adjust vertical alignment of the ampersand */
+}
+
+/* Request Text */
+.request-text {
+    font-family: 'Playfair Display', serif; /* Italic, elegant font for the message */
+    font-style: italic;
+    font-size: 16px;
+    color: var(--soft-gray);
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* Button Styling */
+.open-invitation-btn {
+    background-image: var(--primary-pink);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(216, 13, 199, 0.377);
+}
+
+.open-invitation-btn:hover {
+    background-color: #30a17c; /* Slightly darker pink on hover */
+}
+
+.open-invitation-btn i {
+    margin-left: 8px;
+}
+
+/* Optional: Horizontal line below names (Approximating the visual separator in the image) */
+.names-section::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background-image: var(--primary-pink);
+    opacity: 0.5;
+}
