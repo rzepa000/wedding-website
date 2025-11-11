@@ -149,3 +149,94 @@ a {
     background-image: var(--primary-pink);
     opacity: 0.5;
 }
+
+/* Base Styles */
+body {
+    margin: 100px;
+    background: #eee;
+    font-family: verdana;
+}
+
+/* Card Wrapper Styles */
+.card {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    /* Properties for 3D animation */
+    position: relative;
+    perspective: 1400px; /* Controls 3D depth/perspective */
+    /* Transition for sliding the card on open */
+    left: 0;
+    transition: all 1s;
+}
+
+/* Card Open: Slide the card right */
+.card.open {
+    left: 150px;
+}
+
+/* Left Card (The Animated Cover) */
+.left-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Keeps the cover on top */
+
+    /* Properties for 3D flip animation */
+    transform-origin: 0 0; /* Flip from the left edge */
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+/* Left Card Open: Flip the cover 180 degrees */
+.card.open .left-card {
+    transform: rotateY(-180deg);
+}
+
+/* Front and Back of the Left Card (stacked on top of each other) */
+.left-card .card-front,
+.left-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* Hides the back of the element when flipped 180deg */
+    backface-visibility: hidden; 
+}
+
+/* Image on the card front */
+.left-card img {
+    width: 100%;
+}
+
+/* Inside of the card cover (back of the left-card) */
+.left-card .card-back {
+    background: #f4f4f4;
+    /* Initially flip the back so it's hidden */
+    transform: rotateY(180deg);
+}
+
+/* Right Card (The Inner Message) */
+.right-card {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #444;
+    
+    /* Positioned absolutely underneath the left card */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.right-card h2 {
+    color: crimson;
+}
