@@ -1,13 +1,11 @@
 /* General Reset and Body Styles */
+
+
+/* Base Styles */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f8f8f8; /* Light background for the overall page */
-    font-family: 'Poppins', sans-serif; /* Default clean font */
-    color: #333;
+    margin: 20px;
+    background: #eee;
+    font-family: verdana;
 }
 
 /* Invitation Card Container */
@@ -150,17 +148,12 @@ a {
     opacity: 0.5;
 }
 
-/* Base Styles */
-body {
-    margin: 100px;
-    background: #eee;
-    font-family: verdana;
-}
+
 
 /* Card Wrapper Styles */
 .card {
     width: 400px;
-    height: 500px;
+    height: 475px;
     margin: 0 auto;
     /* Properties for 3D animation */
     position: relative;
@@ -173,6 +166,25 @@ body {
 /* Card Open: Slide the card right */
 .card.open {
     left: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+    .card.open {
+    left: 50px;
+}
+
+.card {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    /* Properties for 3D animation */
+    position: relative;
+    perspective: 1400px; /* Controls 3D depth/perspective */
+    /* Transition for sliding the card on open */
+    left: 0;
+    transition: all 1s;
+}
+
 }
 
 /* Left Card (The Animated Cover) */
@@ -225,7 +237,7 @@ body {
     height: 100%;
     background: #fff;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     color: #444;
